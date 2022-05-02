@@ -20,7 +20,10 @@ processes = []
 
 [env]
   PORT = "8080"
-  SERVER_COMMAND = "bundle exec puma -C config/puma.rb"
+
+[metrics]
+  port = 9394
+  path = "/metrics"
 
 [experimental]
   allowed_public_ports = []
