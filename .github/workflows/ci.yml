@@ -11,7 +11,6 @@ jobs:
           POSTGRES_USER: guestbook
           POSTGRES_DB: guestbook_test
           POSTGRES_PASSWORD: ""
-        ports: ["5432:5432"]
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -26,8 +25,8 @@ jobs:
       - name: Setup test database
         env:
           RAILS_ENV: test
-          PGHOST: localhost
-          PGUSER: guestbook
+          DATABASE_HOST: postgres
+          DATABASE_USER: guestbook
         run: |
           bin/rails db:setup
       - name: Run tests
