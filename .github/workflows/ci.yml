@@ -7,9 +7,6 @@ jobs:
     services:
       postgres:
         image: postgres:14
-        env:
-          POSTGRES_USER: guestbook
-          POSTGRES_PASSWORD: ""
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -25,7 +22,7 @@ jobs:
         env:
           RAILS_ENV: test
           DATABASE_HOST: postgres
-          DATABASE_USER: guestbook
+          DATABASE_USER: postgres
         run: |
           bin/rails db:create
           bin/rails db:setup
