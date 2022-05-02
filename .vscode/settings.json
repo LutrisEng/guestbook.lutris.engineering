@@ -1,0 +1,10 @@
+{
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-workflow.json": "file:///Users/pmc/go/src/github.com/lutriseng/guestbook.lutris.engineering/.github/workflows/deploy.yml"
+    },
+    "ruby.codeCompletion": "rcodetools",
+    "ruby.intellisense": "rubyLocate",
+    "ruby.format": "rubocop",
+    "ruby.useBundler": true,
+    "ruby.useLanguageServer": true
+}

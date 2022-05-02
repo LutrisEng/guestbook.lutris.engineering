@@ -1,0 +1,17 @@
+<div>
+    <h1>Lutris Guestbook</h1>
+    <p>This is a demo service to show how to deploy an application to fly.io with a proddb connection.</p>
+    <p><a href="https://github.com/lutriseng/guestbook.lutris.engineering">Source code</a></p>
+    <h2>Entries</h2>
+    <ul class="list-disc">
+        <li>
+            <%= form_with do |form| %>
+                <%= form.text_field :name %>
+                <%= form.submit "Add", class: "btn" %>
+            <% end %>
+        </li>
+        <% @entries.each do |entry| %>
+            <li><%= entry.name %> on <%= entry.timestamp.strftime("%d %B %Y") %></li>
+        <% end %>
+    </ul>
+</div>
