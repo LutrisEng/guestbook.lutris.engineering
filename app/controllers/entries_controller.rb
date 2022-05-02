@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
     def index
-        @entries = Entry.order("timestamp DESC")
+        @entries = Entry.order("timestamp DESC").limit(10)
     end
 
     def add
