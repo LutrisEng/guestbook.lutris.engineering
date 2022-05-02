@@ -9,7 +9,6 @@ jobs:
         image: postgres:14
         env:
           POSTGRES_USER: guestbook
-          POSTGRES_DB: guestbook_test
           POSTGRES_PASSWORD: ""
     steps:
       - name: Checkout code
@@ -28,6 +27,7 @@ jobs:
           DATABASE_HOST: postgres
           DATABASE_USER: guestbook
         run: |
+          bin/rails db:create
           bin/rails db:setup
       - name: Run tests
         run: bin/rails test
